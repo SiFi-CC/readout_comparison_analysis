@@ -11,3 +11,5 @@ by visual inspection. This is important for use in klaus6b_resolution.C
 
 klaus6b_resolution.C: Generates the ADC and time resolution histograms for at most eight fibers. Also generates
 the time interval between subsequent hits in a channel for deadtime studies.
+
+citiroc_channel_mapping.c Creates a 2d histogram (or a list of histograms for multiple runs) where channels attached to the same fiber can be deduced by visual inspection. 
