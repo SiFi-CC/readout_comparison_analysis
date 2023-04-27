@@ -17,3 +17,11 @@ citiroc_channel_mapping.c Creates a 2d histogram (or a list of histograms for mu
 citiroc_spectroscopy_reader_HG.C: Generates a .root file with histograms for each channel for each consecutive run from _list.txt file created by Janus software. This one is used for HG spectroscopy mode.
 
 citiroc_spectroscopy_reader_LG.C: Generates a .root file with histograms for each channel for each consecutive run from _list.txt file created by Janus software. This one is used for LG spectroscopy mode, useful for measurements with source. 
+
+plot_rate_limit.C: Plot collected rate limit TGraph from measurements
+
+plot_dynamic_range.C: Plot collected dynamic range TGraph from measurements
+
+HOUSEKEEPING
+
+make clean: Clears all PDF files
