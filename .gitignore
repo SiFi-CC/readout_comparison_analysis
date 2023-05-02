@@ -33,3 +33,7 @@
 
 # PDF files
 *.pdf
+
+# Others
+*.swp
+*.swo
