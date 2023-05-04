@@ -13,14 +13,14 @@ void plot_rate_limit() {
         {"twinpeaks", {0, 0, 0, 0, 0, 0, 0, 0} }, //missing one data point
         {"citirocLG", {1, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7} },
         {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0} },
-        {"desktopdigitizer", {0, 0, 0, 0, 0, 0, 0, 0} }
+        {"drs4", {0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8} }
     };
     std::map<std::string, std::vector<float> > _err = {
         {"klaus6b10bitLG", {1, 1, 1, 1, 1, 1, 1, 1} },
         {"twinpeaks", {1, 1, 1, 1, 1, 1, 0, 1} },
         {"citirocLG", {1, 1, 1, 1, 1, 1, 1, 1} },
         {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0} },
-        {"desktopdigitizer", {0, 0, 0, 0, 0, 0, 0, 0} }
+        {"drs4", {1, 1, 1, 1, 1, 1, 1, 1} }
     };
 
     TGraphErrors *g1 = new TGraphErrors(reference.size(), &reference[0], &_data["klaus6b10bitLG"][0], 0, &_err["klaus6b10bitLG"][0]);
@@ -39,8 +39,8 @@ void plot_rate_limit() {
     g4->SetTitle("TOFPET2b");
     g4->SetLineWidth(2);
     g4->SetLineColor(kMagenta);
-    TGraphErrors *g5 = new TGraphErrors(reference.size(), &reference[0], &_data["desktopdigitizer"][0], 0, &_err["desktopdigitizer"][0]);
-    g5->SetTitle("CAEN Desktop Digitizer");
+    TGraphErrors *g5 = new TGraphErrors(reference.size(), &reference[0], &_data["drs4"][0], 0, &_err["drs4"][0]);
+    g5->SetTitle("DRS4");
     g5->SetLineWidth(2);
     g5->SetLineColor(kBlack);
 
@@ -55,5 +55,6 @@ void plot_rate_limit() {
     mg->Draw("A");
     c->Draw();
     TLegend *legend = c->BuildLegend(0.13, 0.66, 0.43, 0.87);
+    legend->SetLineWidth(0);
     c->SaveAs("plot_rate_limit.pdf");
 }
