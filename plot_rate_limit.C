@@ -9,14 +9,14 @@
 void plot_rate_limit() {
     std::vector<float> reference = {0.1, 0.2, 0.4, 0.75, 1, 10, 20, 30, 60, 100, 200, 500};
     std::map<std::string, std::vector<float> > _measured = {
-        {"klaus6b10bitLG", {0, 0, 0, 0, 1, 13, 20, 35, 1040, 1040, 1040, 1040} },
+        {"klaus6b10bitLG", {0.1, 0.2, 0.4, 0.75, 1, 10, 20, 30, 58.5, 70.5, 71.1, 71.6} },
         {"twinpeaks", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} }, //missing one data point
         {"citirocLG", {0.1, 0.2, 0.4, 0.75, 1, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7, 1.7} },
         {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
-        {"drs4", {0.1, 0.2, 0.7, 0.75, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8} }
+        {"drs4", {0.1, 0.2, 0.4, 0.75, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8} }
     };
     std::map<std::string, std::vector<float> > _err = {
-        {"klaus6b00bitLG", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+        {"klaus6b10bitLG", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
         {"twinpeaks", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
         {"citirocLG", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
         {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
@@ -63,7 +63,7 @@ void plot_rate_limit() {
     mg->Draw("A");
     c->Draw();
     c->SetLogx();
-    TLegend *legend = c->BuildLegend(0.13, 0.66, 0.43, 0.87);
+    TLegend *legend = c->BuildLegend(0.12, 0.16, 0.42, 0.37);
     legend->SetLineWidth(0);
     c->SaveAs("plot_rate_limit.pdf");
 }

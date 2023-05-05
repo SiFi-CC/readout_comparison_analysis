@@ -10,10 +10,10 @@ void plot_energy_resolution() {
     std::vector<std::string> text = {"Klaus6b 10bit LG", "Twinpeaks", "Citiroc LG", "TOFPet2b", "DRS4"};
     std::vector<float> readout = {0, 1, 2, 3, 4, 5};
     // fit gaussian and read sigma
-    std::vector<float> _mean = {0, 0, 0, 580, 0};
-    std::vector<float> _meanerr = {0, 0, 0, 1, 0};
-    std::vector<float> _sigma = {0, 0, 0, 72.4, 0};
-    std::vector<float> _sigmaerr = {0, 0, 0, 1.7, 0};
+    std::vector<float> _mean = {0, 0, 0, 580, 506.3};
+    std::vector<float> _meanerr = {0, 0, 0, 1, 0.2};
+    std::vector<float> _sigma = {0, 0, 0, 72.4, 43.3};
+    std::vector<float> _sigmaerr = {0, 0, 0, 1.7, 0.2};
     std::vector<float> _corr = {0, 0, 0, -0.3, 0}; //correlation between mean and sigma fit values
 
     std::vector<float> _data(5, 0);
