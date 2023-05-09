@@ -24,7 +24,7 @@ void plot_energy_resolution() {
         _err[i] = _data[i] * TMath::Sqrt(TMath::Power(_sigmaerr[i]/_sigma[i], 2) + TMath::Power(_meanerr[i]/_mean[i], 2) - 2*_corr[i]/(_sigma[i]*_mean[i]) );
     }
 
-    TH1F *h= new TH1F("h", ";Readout system;#frac{#sigma}{#mu}[keV]", text.size(), 0, text.size() );
+    TH1F *h= new TH1F("h", ";Readout system;#frac{#sigma}{#mu}", text.size(), 0, text.size() );
     for(int i=0; i < text.size(); ++i) {
         h->GetXaxis()->SetBinLabel(i+1, Form("%s", text[i].c_str() ) );
         h->SetBinContent(i+1, _data[i]);

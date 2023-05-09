@@ -7,25 +7,25 @@
  *
  */
 void plot_dynamic_range() {
-    std::vector<float> pulseheight = {150, 200, 250, 300, 350, 400, 450, 500, 550}; // mV
-    std::vector<float> reference(8, 0);
+    std::vector<float> pulseheight = {150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 1000, 1500, 1750, 2000, 2250}; // mV
+    std::vector<float> reference(15, 0);
     for(int i=0; i<pulseheight.size(); ++i) {
         reference[i] = 1E+12 * (33E-12 * pulseheight[i]*1E-3 ); // Q = C x V in pC
     }
     std::map<std::string, std::vector<float> > _measured = {
-        {"klaus6b10bitLG", {729, 738, 745, 755, 762, 769, 777, 785, 0} },
-        {"twinpeaks", {1049, 1200, 1264, 1313, 1353, 1389, 0, 1449, 0} }, //tot ns
-        {"citirocLG", {882, 1288, 1672, 2069, 2470, 2861, 3266, 3668, 0} },
-        {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0} },
-        {"drs4", {0, 0, 0, 279, 326, 374, 424, 467, 512} }
+        {"klaus6b10bitLG", {729, 738, 745, 755, 762, 769, 777, 785, 793, 801, 861, 930, 962, 993, 1023} },
+        {"twinpeaks", {1049, 1200, 1264, 1313, 1353, 1389, 0, 1449, 0, 0, 0, 0, 0, 0, 0} }, //tot ns
+        {"citirocLG", {882, 1288, 1672, 2069, 2470, 2861, 3266, 3668, 0, 0, 0, 0, 0, 0, 0} },
+        {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+        {"drs4", {0, 0, 0, 279, 326, 374, 424, 467, 512, 0, 0, 0, 0, 0, 0} }
     };
     // fit Gauss and use error of the mean wherever possible
     std::map<std::string, std::vector<float> > _err = {
-        {"klaus6b10bitLG", {1, 1, 1, 1, 1, 1, 1, 1, 0} },
-        {"twinpeaks", {1, 1, 1, 1, 1, 1, 0, 1, 0} },
-        {"citirocLG", {27, 28, 15, 14, 11, 9, 9, 9, 0} },
-        {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0} },
-        {"drs4", {0, 0, 0, 5, 1, 0, 1, 0, 0} }
+        {"klaus6b11bitLG", {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} },
+        {"twinpeaks", {1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0} },
+        {"citirocLG", {27, 28, 15, 14, 11, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0} },
+        {"tofpet2b", {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0} },
+        {"drs4", {0, 0, 0, 5, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0} }
     };
 
     std::map<std::string, std::vector<float> > _data;

@@ -10,7 +10,7 @@ void plot_time_intervals() {
     std::vector<std::string> text = {"klaus6b10bitLG", "twinpeaks", "citirocLG", "tofpet2b", "drs4"};
     std::vector<float> readout = {0, 1, 2, 3, 4, 5};
     // fit sigmoid L / (1 + expo(-k(x-x0) ), read x0 as deadtime
-    std::vector<float> _data = {0, 0, 0, 990, 0}; //ns
+    std::vector<float> _data = {2, 0, 0, 990, 0}; //ns
     std::vector<float> _err = {0, 0, 0, 19, 0};
 
     TH1F *hInterval = new TH1F("hInterval", ";Readout system;Deadtime[ns]", text.size(), 0, text.size() );

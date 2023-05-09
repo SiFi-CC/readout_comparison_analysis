@@ -10,8 +10,8 @@ void plot_time_coincidence() {
     std::vector<std::string> text = {"Klaus6b 10bit LG", "Twinpeaks", "Citiroc LG", "TOFPet2b", "DRS4"};
     std::vector<float> readout = {0, 1, 2, 3, 4, 5};
     // fit gaussian and read sigma
-    std::vector<float> _data = {0, 0.94, 0, 0.79, 1.152}; //ns
-    std::vector<float> _err = {0, 0.04, 0, 0.017, 0.001};
+    std::vector<float> _data = {0.084, 0.94, 0, 0.79, 1.152}; //ns
+    std::vector<float> _err = {0.001, 0.04, 0, 0.017, 0.001};
 
     TH1F *h= new TH1F("h", ";Readout system;Coincidence time resolution[ns]", text.size(), 0, text.size() );
     for(int i=0; i < text.size(); ++i) {
