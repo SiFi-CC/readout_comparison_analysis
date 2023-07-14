@@ -25,7 +25,7 @@ void graph()
 
         //auto legend = new TLegend(0.1,0.7,0.48,0.9);
         //if(f->GetParameter(1) >0) {legend->AddEntry(f,TString::Format("%.3fx +%.1f", f->GetParameter(0),f->GetParameter(1)));}                
-        //else{legend->AddEntry(f,TString::Format("%.3fx +%.1f", f->GetParameter(0),f->GetParameter(1)));}
+        //else{legend->AddEntry(f,TString::Format("%.3fx %.1f", f->GetParameter(0),f->GetParameter(1)));}
         //legend->Draw();
         auto g_s = new TGraphErrors(N,x,s,0,s_err);
         g_s->SetTitle("Secondary peaks");
